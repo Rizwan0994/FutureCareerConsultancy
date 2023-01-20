@@ -47,8 +47,8 @@ app.get('/services', (req, res) =>{
         },
       });
       const mailOption = {
-        from: process.env.GMAIL_USER,
-        to: email,
+        from: email,
+        to: process.env.GMAIL_USER,
         subject: subject,
         html: `You got a message from 
         Email : ${email}
