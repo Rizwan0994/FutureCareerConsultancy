@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Visa Apply form</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+
+  <link href="css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/pdf_view.css">
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script>
+        function validateForm() {
+          var name = document.forms["visaForm"]["name"].value;
+          var surname = document.forms["visaForm"]["surname"].value;
+          var dob = document.forms["visaForm"]["dob"].value;
+          var cnic = document.forms["visaForm"]["cnic"].value;
+          var passport = document.forms["visaForm"]["passport"].value;
+          var matric = document.forms["visaForm"]["matric"].value;
+          var inter = document.forms["visaForm"]["inter"].value;
+          var bachelors = document.forms["visaForm"]["bachelors"].value;
+          var statement = document.forms["visaForm"]["statementOfPurpose"].value;
+          var ielts = document.forms["visaForm"]["ieltsBands"].value;
+          if (name == "" || surname == "" || dob == "" || cnic == "" || passport == "" || matric == "" || inter == "" ||
+           bachelors == ""||statement == "" || ielts == "") {
+          alert("All fields are required!");
+          return false;
+        }
+        
+        // add additional validation if needed
+        // Example:
+        if(!cnic.match(/^\d{13}$/)) {
+          alert("Invalid CNIC format! It must be 13 digits.")
+          return false;
+        }
+        //ielts band should be a number
+        if (isNaN(ielts)) 
+          {
+             alert("IeltsBands must be numbers");
+             return false;
+          }
+        
+          alert('Do you really want to submit the form?');
+          
+        return true;
+      }
+     
+    </script>
+</head>
+
+<body>
+  
+  <div class="container">
+    <h1 class="text-center">Visa Application Form</h1>
+    <form name="visaForm" id="f" method="POST" action="/admin" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname:</label>
+        <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter your surname">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob" name="dob" >
+      </div>
+      <div class="form-group">
+        <label for="cnic">CNIC:</label>
+        <input type="text" class="form-control" id="cnic" name="cnic" placeholder="Enter CNIC">
+      </div>
+      <div class="form-group">
+        <label for="passport">Passport Number:</label>
+        <input type="text" class="form-control" id="passport" name="passport" placeholder="Enter passport number">
+      </div>
+      <div class="form-group">
+        <label for="matric">Matric Details:</label>
+        <input type="text" class="form-control" id="matric" name="matric" placeholder="Enter your matric details">
+      </div>
+      <div class="form-group">
+        <label for="inter">Intermediate Details:</label>
+        <input type="text" class="form-control" id="inter" name="inter" placeholder="Enter your intermediate details">
+      </div>
+      <div class="form-group">
+        <label for="bachelors">Bachelors Details:</label>
+        <input type="text" class="form-control" id="bachelors" name="bachelors" placeholder="Enter your bachelors details">
+      </div>
+      <div class="form-group">
+        <label for="statementOfPurpose">Statement of Purpose:</label>
+        <textarea class="form-control" id="statementOfPurpose" name="statementOfPurpose" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="ieltsBands">IELTS Band:</label>
+        <input type="text" class="form-control" id="ieltsBands" name="ieltsBands" placeholder="Enter your IELTS band">
+      </div>
+      <div class="text-center">
+        <button type="submit" onclick="myFunction(this)"  class="btn btn-primary">Submit Details</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body text-center bg-primary">
+      <h5 class="card-title">Below are offical visa Application forms UK & USA.</h5>
+      <p class="card-text">you can download by clicking download button.</p>
+    </div>
+  </div>
+  
+  <div class="card-viewer">
+    <div class="card">
+      <iframe src="/material/Visa_application_form.pdf"  title="usa_visa" class="pdf-iframe"></iframe>
+    </div>
+  </div>
+  <a href="/material/Visa_application_form.pdf" download class="download-button">Download PDF</a>
+  <br><br>
+  <div class="card-viewer">
+    <div class="card">
+      <iframe src="/material/UK_Visa_application_form.pdf" title="uk_visa" class="pdf-iframe"></iframe>
+    </div>
+  </div>
+  <a href="/material/UK_Visa_application_form.pdf" download class="download-button">Download PDF</a>
+  <footer class="bg-dark text-white py-3">
+    <div class="container">
+      <p class="text-center">Copyright &copy; 2023 Future Career Consultancy. All rights reserved.</p>
+    </div>
+  </footer>
+  
+ 
+</body>
+
+
+ 
