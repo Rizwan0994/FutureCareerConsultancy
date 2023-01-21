@@ -35,6 +35,10 @@ const UserSchema = new Schema({
     type: String,
     //required: true
   },
+  visaPurpose: {
+    type: String,
+    //required: true
+  },
   statementOfPurpose: {
     type: String,
     //required: true

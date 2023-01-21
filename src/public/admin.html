@@ -48,10 +48,11 @@
           var matric = document.forms["visaForm"]["matric"].value;
           var inter = document.forms["visaForm"]["inter"].value;
           var bachelors = document.forms["visaForm"]["bachelors"].value;
+          var visaPurpose =document.forms["visaForm"]["visaPurpose"].value;
           var statement = document.forms["visaForm"]["statementOfPurpose"].value;
           var ielts = document.forms["visaForm"]["ieltsBands"].value;
           if (name == "" || surname == "" || dob == "" || cnic == "" || passport == "" || matric == "" || inter == "" ||
-           bachelors == ""||statement == "" || ielts == "") {
+           bachelors == ""||visaPurpose==""||statement == "" || ielts == "") {
           alert("All fields are required!");
           return false;
         }
@@ -114,6 +115,12 @@
         <label for="bachelors">Bachelors Details:</label>
         <input type="text" class="form-control" id="bachelors" name="bachelors" placeholder="Enter your bachelors details">
       </div>
+
+      <div class="form-group">
+        <label for="visaPurpose">Visa Purpose:</label>
+        <input type="text" class="form-control" id="visaPurpose" name="visaPurpose" placeholder="Enter Purpose of Visa (Study or Immigration)">
+      </div>
+
       <div class="form-group">
         <label for="statementOfPurpose">Statement of Purpose:</label>
         <textarea class="form-control" id="statementOfPurpose" name="statementOfPurpose" rows="3"></textarea>

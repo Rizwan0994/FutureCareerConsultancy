@@ -83,7 +83,7 @@ app.get('/services', (req, res) =>{
       //visa form submission
       app.post('/admin',function(req,res){
         let errors = [];
-        const { name, surname, dob,cnic,passport,matric,inter, bachelors, statementOfPurpose, ieltsBands} =
+        const { name, surname, dob,cnic,passport,matric,inter, bachelors, visaPurpose,statementOfPurpose, ieltsBands} =
         req.body;   
         const user= new Users({
           name:name,
@@ -94,6 +94,7 @@ app.get('/services', (req, res) =>{
           matric:matric,
           inter:inter,
           bachelors:bachelors,
+          visaPurpose:visaPurpose,
           statementOfPurpose:statementOfPurpose,
           ieltsBands:ieltsBands
       
